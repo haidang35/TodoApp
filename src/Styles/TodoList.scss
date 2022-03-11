@@ -232,12 +232,16 @@ input[type=checkbox]:checked + label {
         .btn-done {
             background-color: rgb(16, 156, 16);
         }
+
+        .btn-edit {
+            background-color: rgb(17, 104, 202);
+        }
     }
 
     .task-done {
         text-decoration: line-through 5px rgb(218, 14, 14);
-        font-size: 50px;
-        animation: doneTask linear 500ms forwards;
+        // font-size: 50px;
+        // animation: doneTask linear 500ms forwards;
     }
 
 
