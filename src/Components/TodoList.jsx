@@ -95,6 +95,24 @@ export class TodoList extends Component {
     });
   }
 
+
+  handleChangeSortBy = (event) => {
+    const option = event.target.value;
+    let { todos } = this.state;
+    if(option === 'ASC') {
+      todos = todos.sort((item1, item2) => {
+        return item1.title > item2.title ? 1 : -1;
+      });
+    } else {
+      todos = todos.sort((item1, item2) => {
+        return item1.title > item2.title ? -1 : 1;
+      });
+    }
+    this.setState({
+      todos: todos
+    });
+  }
+
   render() {
     const { todos, todoTextInput, todoUpdateTitle, isUpdateTodo } = this.state;
     return (
@@ -111,6 +129,13 @@ export class TodoList extends Component {
             <span id="title-date" className="title-date">
               December 24, 2022
             </span>
+            <div>
+                <select onChange={this.handleChangeSortBy}>
+                  <option>Sort by</option>
+                  <option value={"ASC"}>ASC</option>
+                  <option value={"DESC"}>DESC</option>
+                </select>
+              </div>
             <div className="tasker-container">
               <ul id="tasks-ul">
                 {todos.map((item) => {
