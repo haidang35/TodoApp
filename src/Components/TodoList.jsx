@@ -7,7 +7,8 @@ export class TodoList extends Component {
     super(props);
     this.state = {
       todos: [],
-      todoTextInput: ''
+      todoTextInput: '',
+      minhduc: '',
     };
   }
 
@@ -56,7 +57,10 @@ export class TodoList extends Component {
     // Cách 2
     todos.forEach((item, index) => {
         if(item.id === todo.id) {
+          console.log(index)
             todos.splice(index, 1);
+            // index=[0,1,2,576>42]=>
+            // splice(4,4)
 
         }
       });
